@@ -1,0 +1,196 @@
+
+header{
+    display: flex;
+    flex-wrap: nowrap;
+    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00D400;
+    height: 50px;
+    width: 100%;
+  
+
+ 
+}
+
+
+
+.icon_contact{
+    display: flex;
+    flex: 1;
+    gap: 60px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5%;
+    
+ 
+}
+
+.icon_tel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: aliceblue;
+    color: coral;
+    
+
+}
+
+.icon_mail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: aliceblue;
+    color: coral;
+   
+
+}
+
+.social_network{
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    margin-right: 5%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+   
+}
+
+
+
+.icon_fb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: aliceblue;
+    color: coral;
+   
+
+}
+.icon_ig{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: aliceblue;
+    color: coral;
+   
+
+}
+.icon_lkdn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: aliceblue;
+    color: coral;
+   
+
+}
+.icon_x{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: aliceblue;
+    color: coral;
+   
+
+}
+
+header h1{
+    font-size: 24px;
+}
+
+
+.bg_im{
+   
+    width: 100%;
+    background-image:linear-gradient(to right,rgba(255, 127, 42,0.8) 0%,rgba(255, 127, 42,0.5) 20%,rgba(255, 127, 42,0.3) 100%),
+                    url('../images/v6202_252.jpg');
+                    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;  
+    display: flex;        
+    justify-content: center;
+    justify-items: center;
+   
+}
+
+.raleway-medium{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 500;
+}
+.raleway-bold{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 700;
+}
+.raleway-semi-bold{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 600;
+}
+.raleway-black{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 900
+}
+.raleway-regular{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 300;
+}
+
+.ENCM{
+   
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    gap: 1px;
+    position: relative;
+    white-space: nowrap;
+    margin-left: 1%;
+
+
+}
+.btdon{
+    background-color: #018601;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-top: 50px;
+}
+
+
+
+/* config responsive probleme */
+
+/* prob section 2 */
+
+.c-50-m{
+    margin-top: 0px;
+}
+
+@media (min-width:768px) {
+    .c-50-m{
+        margin-top: 50px;
+    }
+}

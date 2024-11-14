@@ -1,0 +1,7 @@
+./db.sqlite3
+
+./frah/__pycache__
+./blog/__pycache__
+./main/__pycache__
+./env
+./venv

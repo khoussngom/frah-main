@@ -1,0 +1,121 @@
+{% extends "base2.html" %}
+
+
+{% block titlePage %}
+    BLOG
+{% endblock %} 
+
+{% block descriptionPage %}
+Des articles pour nous guider au quotidien
+{% endblock %}
+
+{% block content %}
+
+    <!-- for padding in all page -->
+    <div class="px-5 mb-5" style="">
+        <div class="container-fluid">
+            <div class="mt-5"></div>
+            <div class="row">
+                <!-- search and text inline section -->
+
+                <!-- for text -->
+                <div class="col-12 col-md-8 col-lg-8  text-white fs-5 ">
+                    <p class="raleway-medium" style="color: black;">Utilisez les filtres pour trouver les contenus qui vous intéressent.</p>
+
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 text-white fs-5 d-flex justify-content-end ">
+                    <form class="d-flex">
+                      <div class="input-group"></div>
+                      <div class="d-flex border border-2 rounded me-2 ">
+                        <input class="form-control   border-0 me-2" type="search" placeholder="Rechercher" value="{{ request.GET.search }}" aria-label="Search" style="width:revert" >
+                      <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z"/>
+                          </svg>
+                        </i>
+                      </button>
+                      
+                      <ul class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+                        <!-- Date Debut Field -->
+                        <div class="mb-3">
+                          <label for="dateDebut" class="form-label">Date Debut</label>
+                          <input type="date" class="form-control" id="dateDebut" name="date_debut">
+                        </div>
+                      
+                        <!-- Date Fin Field -->
+                        <div class="mb-3">
+                          <label for="dateFin" class="form-label">Date Fin</label>
+                          <input type="date" class="form-control" id="dateFin" name="date_fin">
+                        </div>
+                      
+                        <!-- Additional Dropdown for Categories -->
+                        <div class="mb-3">
+                          <label for="categorieDropdown" class="form-label">Choisir la Catégorie</label>
+                          <select class="form-select" id="categorieDropdown" name="categorie">
+                            <option value="" disabled selected>Choisir une catégorie</option>
+                            {% for value, label in form.categorie.field.choices %}
+                              <option value="{{ value }}"  > {{ label }}</option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                      
+                        <!-- Checkbox List for Categories -->
+  
+                        <button class="btn btn-primary">
+                          filtrer
+                        </button>
+                        
+                      </ul>
+                      
+                      </div>
+                      <button class="btn btn-outline-success" type="submit">search</button>
+                      
+                    </form>
+                  </div>
+                
+                <div class="row mt-5">
+
+                  {% for blog in blogs %}
+                  <div class="col-12 col-md-6 col-lg-4">
+                    {% if blog.images.all %}
+                      <div class="mt-2 me-2 rounded shadow" style="background-image: url('{{ blog.images.all.0.image.url }}'); position: relative; background-size: cover; height: 200px;">
+                          <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background-color: #00d40096; z-index: 1;"></div>
+                          <div class="text-white justify-content-between d-flex" style="position: absolute; bottom: 0; left: 0; width: 100%; font-size: 18px; font-weight: bold; margin-bottom: 10px; text-align: center; padding: 10px; z-index: 2;">
+                              <div class="d-flex justify-content-start align-items-start flex-column">
+                                  <p class="fw-bolder" style="margin-bottom: -5px">{{ blog.title }}</p>
+                                  <p class="fw-lighter" style="margin-bottom: 3px;">{{ blog.date_evenement|date:"d/m/Y" }}</p>
+                              </div>
+                          </div>
+                      </div>
+                    {% else %}
+                      <div class="mt-2 me-2 rounded shadow" style="background-image: url('../static/images/v6213_271.jpg'); position:relative; background-size: cover; height: 200px;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background-color: #00d40096; z-index: 1;"></div>
+                        <div class="text-white justify-content-between d-flex" style="position: absolute; bottom: 0; left: 0; width: 100%; font-size: 18px; font-weight: bold; margin-bottom: 10px; text-align: center; padding: 10px; z-index: 2;">
+                            <div class="d-flex justify-content-start align-items-start flex-column">
+                                <p class="fw-bolder" style="margin-bottom: -5px">{{ blog.title }}</p>
+                                <p class="fw-lighter" style="margin-bottom: 3px;">{{ blog.date_evenement|date:"d/m/Y" }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+              
+                      <p class="fw-bold mt-4">{{ blog.some_field }}</p>
+                      <p>
+                          {{ blog.content|striptags|truncatewords:30 }}
+                          <a class="text-success" href="{% url 'blog-detail' slug=blog.slug id=blog.id %}">Lire la suite </a>
+                      </p>
+              
+                  </div>
+              {% empty %}
+                  <h2>Aucun Blog</h2>
+              {% endfor %}
+              
+              </div>
+
+
+    </div>
+    </div>
+
+{% endblock %}

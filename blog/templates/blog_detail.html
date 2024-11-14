@@ -1,0 +1,65 @@
+{% extends "base2.html" %}
+
+{% block titlePage %}
+    Blog
+{% endblock %} 
+
+{% block descriptionPage %}
+Des articles pour nous guider au quotidien
+{% endblock %}
+
+{% block content %}
+
+    <!-- for padding in all page -->
+    <div class="px-5" style="">
+        <div class="container-fluid">
+            <div class="mt-5"></div>
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-3 bg-light">
+                    <div class="bg-light">
+                            <h2 class="raleway-bold">BLOG</h2>
+                            <p class="raleway-medium">Utilisez les filtres pour trouver les
+                                contenus qui vous intéressent.
+                            </p>
+                            <button class="btn btn-outline-primary" type="button">Toutes les catégories</button>
+                            <button class="btn-light btn-md" type="button"> Ramadan</button>
+                            <button class="btn-light btn-sm" type="button">zakat al mal</button>
+                            <button class="btn-light btn-sm" type="button">Don</button>
+                    </div>
+
+                    <div class=" d-none d-md-block mt-5">
+                        <h2 class="raleway-bold">NewsLetter</h2>
+                        <p class="raleway-medium">
+                            Pour des mise à jour régulières sur notre travail et le contenu islamique de la plus haute qualit, inscrivez-vous à notre newsletter.
+                        </p>
+                        <div class="mb-1">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <button type="button" class="btn btn-warning w-100 mb-5">Soumettre</button>
+                    </div>
+
+                    <div class="d-none d-md-block">
+                        <h2 class="raleway-bold">Nous soutenir</h2>
+                        <p class="raleway-medium mb-1">
+                            Réalisez une Sadaqah avec Aide Fisabilillah, c’est soutenir des projets durables qui apportent un réel changement dans la vie des plus démunies
+                        </p>
+                        <button type="button" class="btn btn-success mb-5">Faire un don</button>
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-8 col-lg-9">
+                    <h2>{{ title }}</h2>
+                    {{ blog|safe }}
+
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
